@@ -5,12 +5,12 @@ export class Post {
     @PrimaryKey()
     id!: number; // string is also supported
     
-    @Property()
+    @Property({ type: 'text' })
     title!: string;
 
-    @Property()
+    @Property({ type: 'date' })
     createdAt: Date = new Date();
   
-    @Property({ onUpdate: () => new Date() })
+    @Property({ type: 'date', onUpdate: () => new Date() })
     updatedAt: Date = new Date();
   }
